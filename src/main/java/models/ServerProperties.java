@@ -17,8 +17,6 @@ public class ServerProperties {
 
     @JsonProperty("Server")
     private Server server;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("Server")
     public Server getServer() {
@@ -28,16 +26,6 @@ public class ServerProperties {
     @JsonProperty("Server")
     public void setServer(Server server) {
         this.server = server;
-    }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,8 +39,6 @@ public class ServerProperties {
         private String name;
         @JsonProperty("url")
         private String url;
-        @JsonIgnore
-        private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
         @JsonProperty("name")
         public String getName() {
@@ -73,17 +59,6 @@ public class ServerProperties {
         public void setUrl(String url) {
             this.url = url;
         }
-
-        @JsonAnyGetter
-        public Map<String, Object> getAdditionalProperties() {
-            return this.additionalProperties;
-        }
-
-        @JsonAnySetter
-        public void setAdditionalProperty(String name, Object value) {
-            this.additionalProperties.put(name, value);
-        }
-
     }
 
 }
